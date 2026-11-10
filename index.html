@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e75480">
+    <meta name="description" content="Plan and save your special date with a live countdown.">
+    <title>Our Special Date 💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <div class="card">
+
+            <header class="header">
+                <div class="heart" aria-hidden="true">💗</div>
+                <h1>Our Special Date</h1>
+                <p>Every special moment deserves a beautiful plan.</p>
+            </header>
+
+            <form id="dateForm" class="form" onsubmit="event.preventDefault(); saveDate();">
+
+                <div class="input-group full">
+                    <label for="dateTitle">Date Title</label>
+                    <input
+                        type="text"
+                        id="dateTitle"
+                        placeholder="Example: Our Anniversary"
+                        maxlength="80"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="date">Select Date</label>
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="time">Select Time</label>
+                    <input
+                        type="time"
+                        id="time"
+                        required
+                    >
+                </div>
+
+                <div class="input-group full">
+                    <label for="location">Location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Where will your date happen?"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div class="input-group full">
+                    <label for="message">Personal Message</label>
+                    <textarea
+                        id="message"
+                        placeholder="Write a special message..."
+                        maxlength="500"
+                    ></textarea>
+                </div>
+
+                <div class="input-group full">
+                    <button type="submit">
+                        💕 Save Our Date
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="clearDate()"
+                        class="clear-button"
+                    >
+                        🗑️ Clear Date
+                    </button>
+                </div>
+
+            </form>
+
+            <section id="dateCard" class="date-card" aria-live="polite">
+
+                <h2 id="displayTitle">Our Special Date 💕</h2>
+
+                <div class="info">
+
+                    <div class="info-box">
+                        <span aria-hidden="true">📅</span>
+                        <p id="displayDate">Date</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span aria-hidden="true">⏰</span>
+                        <p id="displayTime">Time</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span aria-hidden="true">📍</span>
+                        <p id="displayLocation">Location</p>
+                    </div>
+
+                </div>
+
+                <div class="message">
+                    <p id="displayMessage">
+                        Looking forward to this special day! ❤️
+                    </p>
+                </div>
+
+                <div
+                    id="countdown"
+                    class="countdown"
+                    role="timer"
+                    aria-live="off"
+                >
+                    No date scheduled yet.
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="footer">
+            <p>Made with 💗 for special memories.</p>
+            <p>Our Special Date Planner © 2026</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
